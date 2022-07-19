@@ -12,15 +12,18 @@ public class Main {
 
     public static ArrayList<Integer> mergeTwoArrayLists(ArrayList<Integer> l1, ArrayList<Integer> l2) {
         // your code here
-        int c1 = 0, c2 = 0;
-        ArrayList<Integer> res = new ArrayList<Integer>();
+        ArrayList<Integer> listPositiveIntegers = new ArrayList<Integer>();
 
-        while(c1 < l1.size() || c2 < l2.size()) {
-            if(c1 < l1.size())
-                res.add((Integer) l1.get(c1++));
-            if(c2 < l2.size())
-                res.add((Integer) l2.get(c2++));
+        for (Integer num : l1) {
+            if (num > 0) {
+                listPositiveIntegers.add(num);
+            }
         }
-        return res;
+        for (Integer num : l2) {
+            if (num > 0) {
+                listPositiveIntegers.add(num);
+            }
+        }
+        return listPositiveIntegers;
     }
 }
